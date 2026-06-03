@@ -59,11 +59,11 @@ foreach ($requiredPluginPatterns as $pattern => $label) {
     }
 }
 
-if (!str_contains((string)$pluginClass, "public const VERSION = '0.1.1';")) {
+if (false === strpos((string)$pluginClass, "public const VERSION = '0.1.1';")) {
     $failures[] = 'Plugin class VERSION constant must match 0.1.1.';
 }
 
-if (!str_contains($changelog, '## 0.1.1 - 2026-06-03')) {
+if (false === strpos($changelog, '## 0.1.1 - 2026-06-03')) {
     $failures[] = 'CHANGELOG.md must include the 0.1.1 release entry.';
 }
 
