@@ -1,0 +1,34 @@
+{
+  "name": "nariyanto/wp-safe-staging-guard",
+  "description": "Prevent WordPress staging-site accidents with visible environment labels, noindex controls, and safe email handling.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://github.com/nariyanto/wp-safe-staging-guard",
+  "support": {
+    "issues": "https://github.com/nariyanto/wp-safe-staging-guard/issues",
+    "source": "https://github.com/nariyanto/wp-safe-staging-guard"
+  },
+  "authors": [
+    {
+      "name": "Septiyan Nariyanto",
+      "homepage": "https://nariyanto.id"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin",
+    "staging",
+    "noindex",
+    "email-safety",
+    "development"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "composer/installers": "^2.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nariyanto\\SafeStagingGuard\\": "src/"
+    }
+  }
+}

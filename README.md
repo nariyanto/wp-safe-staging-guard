@@ -1,5 +1,12 @@
 # Safe Staging Guard
 
+[![CI](https://github.com/nariyanto/wp-safe-staging-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/nariyanto/wp-safe-staging-guard/actions/workflows/ci.yml)
+[![Latest Release](https://img.shields.io/github/v/release/nariyanto/wp-safe-staging-guard?label=release)](https://github.com/nariyanto/wp-safe-staging-guard/releases)
+[![Packagist Version](https://img.shields.io/packagist/v/nariyanto/wp-safe-staging-guard?label=packagist)](https://packagist.org/packages/nariyanto/wp-safe-staging-guard)
+[![PHP](https://img.shields.io/badge/PHP-%3E%3D%207.4-777bb4.svg)](https://www.php.net/)
+[![WordPress](https://img.shields.io/badge/WordPress-%3E%3D%206.0-21759b.svg)](https://wordpress.org/)
+[![License](https://img.shields.io/badge/license-GPL--2.0--or--later-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
+
 Prevent staging-site accidents with visible environment labels, noindex controls, and safe email handling.
 
 ## Why
