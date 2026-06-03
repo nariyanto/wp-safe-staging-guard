@@ -8,11 +8,11 @@ This checklist prepares **Safe Staging Guard** for WordPress.org plugin director
 - Public plugin name: `Safe Staging Guard`
 - Plugin slug/text domain: `safe-staging-guard`
 - Main file: `safe-staging-guard.php`
-- Current version/stable tag: `0.1.0`
+- Current version/stable tag: `0.1.1`
 - License: `GPL-2.0-or-later`
 - Requires WordPress: `6.0+`
 - Requires PHP: `7.4+`
-- Current package status: GitHub release exists; Packagist exists but only exposes `dev-main` until the next tag includes `composer.json`.
+- Current package status: GitHub release exists; Packagist exists and needs update after `v0.1.1` is tagged.
 
 ## Submission recommendation
 
@@ -20,11 +20,10 @@ Do **not** submit immediately until the pending items below are complete.
 
 Recommended submission path:
 
-1. Finish WordPress.org assets and screenshot evidence.
-2. Add automated readme/header metadata validation, similar to Cron Inspector Lite.
-3. Run Plugin Check against the final release ZIP.
-4. Create a patch release, likely `v0.1.1`, so GitHub, Packagist, and WordPress.org submission metadata all include current Composer/badge/package metadata.
-5. Submit to WordPress.org only after explicit approval from Septiyan.
+1. Capture real WordPress.org screenshots from a clean WordPress/staging install.
+2. Run Plugin Check against the final release ZIP.
+3. Tag `v0.1.1`, update Packagist, and confirm a stable Packagist version is visible.
+4. Submit to WordPress.org only after explicit approval from Septiyan.
 
 ## 1. Plugin identity and metadata
 
@@ -40,9 +39,9 @@ Recommended submission path:
 - [x] Domain path is `/languages`.
 - [x] `readme.txt` public plugin name matches the main header.
 - [x] `readme.txt` contributors field is `nariyanto`.
-- [x] `readme.txt` stable tag matches plugin version: `0.1.0`.
+- [x] `readme.txt` stable tag matches plugin version: `0.1.1`.
 - [x] Tags are relevant and not spammy: `staging`, `noindex`, `email`, `development`, `safety`.
-- [ ] Add `tests/validate-readme.php` to automatically check the main header and `readme.txt` metadata before submission.
+- [x] Add `tests/validate-readme.php` to automatically check the main header and `readme.txt` metadata before submission.
 
 ## 2. Security and code review
 
@@ -52,11 +51,11 @@ Recommended submission path:
 - [x] Production mode does not intercept email or force noindex behavior.
 - [x] No telemetry or external network calls are documented.
 - [x] No credentials, tokens, or private support data are included.
-- [ ] Re-check every admin form/action for capability checks.
-- [ ] Re-check nonce usage for any state-changing settings save flow.
-- [ ] Re-check sanitization of every saved option.
-- [ ] Re-check escaping for all admin/frontend output.
-- [ ] Search for debug leftovers, hardcoded staging URLs, TODOs, and private environment references.
+- [x] Re-check every admin form/action for capability checks.
+- [x] Re-check nonce usage for any state-changing settings save flow.
+- [x] Re-check sanitization of every saved option.
+- [x] Re-check escaping for all admin/frontend output.
+- [x] Search for debug leftovers, hardcoded staging URLs, TODOs, and private environment references.
 - [ ] Run WordPress Plugin Check on the final submission ZIP and save the result in `docs/` or the release notes.
 
 ## 3. Privacy, disclosure, and policy fit
@@ -64,25 +63,25 @@ Recommended submission path:
 - [x] README/readme state that the plugin does not send data externally.
 - [x] Plugin purpose is clear: staging visibility, noindex controls, and email safety.
 - [x] The plugin is not positioned as a complete staging replacement.
-- [ ] Add a short privacy note to `readme.txt` if needed for WordPress.org review clarity.
-- [ ] Confirm email redirect/block behavior cannot accidentally disclose recipient addresses in the UI or logs.
-- [ ] Confirm production mode is the safest default if the plugin is installed on a live site.
+- [x] Add a short privacy note to `readme.txt` if needed for WordPress.org review clarity.
+- [x] Confirm email redirect/block behavior disclosure is documented: redirect mode includes original recipients only in the redirected test email audit note.
+- [x] Confirm production mode disables noindex and email interception when selected.
 
 ## 4. WordPress.org assets
 
 Required/strongly recommended assets before submission:
 
-- [ ] `assets/banner-1544x500.png`
-- [ ] `assets/banner-772x250.png`
-- [ ] `assets/icon-256x256.png`
-- [ ] `assets/icon-128x128.png`
+- [x] `.wordpress-org/assets/banner-1544x500.png`
+- [x] `.wordpress-org/assets/banner-772x250.png`
+- [x] `.wordpress-org/assets/icon-256x256.png`
+- [x] `.wordpress-org/assets/icon-128x128.png`
 - [ ] Screenshot 1: Safe Staging Guard settings page.
 - [ ] Screenshot 2: Admin bar environment label.
 - [ ] Screenshot 3: Frontend staging banner.
 - [ ] Screenshot 4, optional: page source/robots meta evidence for `noindex, nofollow` on staging.
 - [ ] Ensure screenshot captions in `readme.txt` match the final screenshot filenames/order.
 
-Current asset note: `.wordpress-org/README.md` exists as an asset plan, but actual WordPress.org assets are not present yet.
+Current asset note: branded banner/icon assets exist under `.wordpress-org/assets/`; real screenshots are still pending.
 
 ## 5. Testing and release package verification
 
@@ -90,9 +89,11 @@ Run locally before final submission:
 
 ```bash
 php tests/run.php
+php tests/validate-readme.php
 find . -path ./vendor -prune -o -path ./dist -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
 php -r 'json_decode(file_get_contents("composer.json")); if (json_last_error()) { fwrite(STDERR, json_last_error_msg().PHP_EOL); exit(1); } echo "composer.json valid JSON\n";'
 bash scripts/build-release.sh
+python3 scripts/validate-release-zip.py
 ```
 
 Final submission checks:
@@ -100,8 +101,8 @@ Final submission checks:
 - [x] Pure PHP tests exist.
 - [x] Deterministic ZIP builder exists.
 - [x] Current ZIP excludes development-only paths such as `.git`, `.github`, `tests`, `docs`, `scripts`, and `dist`.
-- [ ] Add/port metadata validation script from Cron Inspector Lite.
-- [ ] Validate ZIP contents programmatically after build.
+- [x] Add/port metadata validation script from Cron Inspector Lite.
+- [x] Validate ZIP contents programmatically after build.
 - [ ] Install final ZIP on a clean WordPress test site.
 - [ ] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices.
 - [ ] Verify settings save flow.

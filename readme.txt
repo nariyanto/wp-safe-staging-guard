@@ -4,7 +4,7 @@ Tags: staging, noindex, email, development, safety
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Prevent staging-site accidents with visible environment labels, noindex controls
 
 Safe Staging Guard helps WordPress site owners and developers avoid common staging-site mistakes.
 
-Version 0.1.0 focuses on simple, review-friendly safety controls:
+Version 0.1.1 focuses on simple, review-friendly safety controls:
 
 * Admin bar environment label for administrators.
 * Optional frontend staging banner for logged-in users.
@@ -23,6 +23,8 @@ Version 0.1.0 focuses on simple, review-friendly safety controls:
 * Production mode automatically disables noindex and email interception.
 
 The plugin does not send data to external services and does not collect analytics.
+
+Privacy note: in redirect mode, redirected test emails include an audit note with the original recipients so administrators can confirm what would have been sent. Use a trusted internal test inbox for redirect mode.
 
 == Installation ==
 
@@ -39,7 +41,7 @@ If Environment is set to Production, Safe Staging Guard does not block or redire
 
 = Does this plugin send data externally? =
 
-No. Version 0.1.0 does not send data to external services and does not collect analytics.
+No. Version 0.1.1 does not send data to external services and does not collect analytics.
 
 = Is this a replacement for a proper staging environment? =
 
@@ -52,6 +54,9 @@ No. It is a helper layer for visibility and safety. You should still keep stagin
 3. Frontend staging banner.
 
 == Changelog ==
+
+= 0.1.1 =
+* Added WordPress.org submission checklist, metadata validation, release ZIP validation, release workflow, and repository/Packagist polish.
 
 = 0.1.0 =
 * Initial release with environment label, staging banner, noindex control, and email safety mode.

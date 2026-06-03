@@ -7,7 +7,7 @@ namespace Nariyanto\SafeStagingGuard;
 final class Plugin
 {
     public const OPTION_NAME = 'safe_staging_guard_settings';
-    public const VERSION = '0.1.0';
+    public const VERSION = '0.1.1';
 
     public function register(): void
     {
