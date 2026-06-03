@@ -17,7 +17,11 @@
 
 ## WordPress.org later
 
+See [`docs/wordpress-org-submission-checklist.md`](wordpress-org-submission-checklist.md) for the full submission checklist.
+
 - Add real screenshots from WP Admin.
 - Add banner and icon assets.
+- Add automated `readme.txt` / plugin-header metadata validation.
 - Re-run Plugin Check against final ZIP.
-- Submit only after Cron Inspector Lite review flow is stable.
+- Create a patch release after submission-prep metadata/assets are complete.
+- Submit only after Cron Inspector Lite review flow is stable and Septiyan explicitly approves WordPress.org submission.
