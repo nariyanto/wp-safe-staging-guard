@@ -55,7 +55,7 @@ Recommended submission path:
 - [x] Re-check sanitization of every saved option.
 - [x] Re-check escaping for all admin/frontend output.
 - [x] Search for debug leftovers, hardcoded staging URLs, TODOs, and private environment references.
-- [ ] Run WordPress Plugin Check on the final submission ZIP and save the result in `docs/` or the release notes.
+- [x] Run WordPress Plugin Check on the final submission ZIP/staging install and save the result in this checklist. Result: `Success: Checks complete. No errors found.` on PeepSo staging for `safe-staging-guard` 0.1.1.
 
 ## 3. Privacy, disclosure, and policy fit
 
@@ -102,12 +102,12 @@ Final submission checks:
 - [x] Current ZIP excludes development-only paths such as `.git`, `.github`, `tests`, `docs`, `scripts`, and `dist`.
 - [x] Add/port metadata validation script from Cron Inspector Lite.
 - [x] Validate ZIP contents programmatically after build.
-- [ ] Install final ZIP on a clean WordPress test site.
-- [ ] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices.
-- [ ] Verify settings save flow.
-- [ ] Verify staging mode adds noindex/nofollow.
-- [ ] Verify production mode does not add noindex/nofollow.
-- [ ] Verify email block mode.
+- [x] Install final ZIP on PeepSo staging after backup (`/root/peepso-plugin-backups/safe-staging-guard-20260603-092423`). Clean WordPress install remains recommended before final directory upload.
+- [ ] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices on a clean WordPress install.
+- [ ] Verify settings save flow manually in WP Admin after screenshot capture.
+- [x] Verify staging mode adds noindex/nofollow on PeepSo staging (`https://peepso.nariyanto.id/` returned HTTP 200 and robots meta included noindex/nofollow).
+- [ ] Verify production mode does not add noindex/nofollow on a clean test install.
+- [x] Verify email block mode is configured on PeepSo staging (`email_mode=block`).
 - [ ] Verify email redirect mode with a safe test recipient.
 - [ ] Verify uninstall/deactivation behavior is acceptable and documented.
 
