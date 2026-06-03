@@ -99,9 +99,9 @@ final class Plugin
                         <th scope="row"><label for="ssg-email-mode"><?php echo esc_html__('Email safety mode', 'safe-staging-guard'); ?></label></th>
                         <td>
                             <select id="ssg-email-mode" name="<?php echo esc_attr(self::OPTION_NAME); ?>[email_mode]">
-                                <?php foreach (['block' => 'Block outgoing mail', 'redirect' => 'Redirect outgoing mail', 'allow' => 'Allow outgoing mail'] as $value => $label) : ?>
-                                    <option value="<?php echo esc_attr($value); ?>" <?php selected($settings->emailMode(), $value); ?>><?php echo esc_html__($label, 'safe-staging-guard'); ?></option>
-                                <?php endforeach; ?>
+                                <option value="block" <?php selected($settings->emailMode(), 'block'); ?>><?php echo esc_html__('Block outgoing mail', 'safe-staging-guard'); ?></option>
+                                <option value="redirect" <?php selected($settings->emailMode(), 'redirect'); ?>><?php echo esc_html__('Redirect outgoing mail', 'safe-staging-guard'); ?></option>
+                                <option value="allow" <?php selected($settings->emailMode(), 'allow'); ?>><?php echo esc_html__('Allow outgoing mail', 'safe-staging-guard'); ?></option>
                             </select>
                             <p class="description"><?php echo esc_html__('Email interception is skipped automatically when environment is Production.', 'safe-staging-guard'); ?></p>
                         </td>
@@ -141,7 +141,8 @@ final class Plugin
             return;
         }
         echo '<div style="position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#7c2d12;color:#fff;text-align:center;padding:8px 12px;font:600 13px system-ui,sans-serif;">';
-        echo esc_html(sprintf(__('Safe Staging Guard: %s environment — emails are %s.', 'safe-staging-guard'), strtoupper($settings->environment()), $settings->emailMode()));
+        /* translators: 1: Current environment label, 2: Email safety mode. */
+        echo esc_html(sprintf(__('Safe Staging Guard: %1$s environment — emails are %2$s.', 'safe-staging-guard'), strtoupper($settings->environment()), $settings->emailMode()));
         echo '</div>';
     }
 
