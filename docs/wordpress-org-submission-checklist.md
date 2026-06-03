@@ -12,7 +12,7 @@ This checklist prepares **Safe Staging Guard** for WordPress.org plugin director
 - License: `GPL-2.0-or-later`
 - Requires WordPress: `6.0+`
 - Requires PHP: `7.4+`
-- Current package status: GitHub release exists; Packagist exists and needs update after `v0.1.1` is tagged.
+- Current package status: GitHub release `v0.1.1` exists; Packagist exposes stable `v0.1.1`.
 
 ## Submission recommendation
 
@@ -22,8 +22,7 @@ Recommended submission path:
 
 1. Capture real WordPress.org screenshots from a clean WordPress/staging install.
 2. Run Plugin Check against the final release ZIP.
-3. Tag `v0.1.1`, update Packagist, and confirm a stable Packagist version is visible.
-4. Submit to WordPress.org only after explicit approval from Septiyan.
+3. Submit to WordPress.org only after explicit approval from Septiyan.
 
 ## 1. Plugin identity and metadata
 
@@ -119,10 +118,10 @@ Final submission checks:
 - [x] GitHub release `v0.1.0` exists.
 - [x] Composer metadata exists.
 - [x] Packagist package exists.
-- [ ] Create `v0.1.1` after final submission-prep docs/scripts/assets are complete, because `v0.1.0` was tagged before `composer.json` existed.
-- [ ] After `v0.1.1`, update Packagist and confirm the package exposes a stable version.
-- [ ] If stable Packagist version exists, switch README badge from downloads to version.
-- [ ] Confirm GitHub release ZIP and WordPress.org submission ZIP are aligned.
+- [x] Create `v0.1.1` after final submission-prep docs/scripts/assets are complete, because `v0.1.0` was tagged before `composer.json` existed.
+- [x] After `v0.1.1`, update Packagist and confirm the package exposes a stable version.
+- [x] If stable Packagist version exists, switch README badge from downloads to version.
+- [x] Confirm GitHub release ZIP and WordPress.org submission ZIP are aligned.
 
 ## 7. WordPress.org submission form prep
 
