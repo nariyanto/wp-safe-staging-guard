@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+      - name: Run tests
+        run: php tests/run.php
+      - name: PHP syntax check
+        run: find . -path ./.git -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l
+      - name: Build release ZIP
+        run: bash scripts/build-release.sh
