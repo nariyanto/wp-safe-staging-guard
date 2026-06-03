@@ -21,6 +21,15 @@ Safe Staging Guard adds a small safety layer for WordPress staging/local environ
 - Email block or redirect mode.
 - Production mode disables email interception and noindex.
 
+## Staging verification
+
+Installed and verified on `peepso.nariyanto.id` staging with:
+
+- staging environment mode enabled,
+- `noindex, nofollow` robots meta active,
+- email safety mode set to block,
+- Plugin Check completed with no errors.
+
 ## Development
 
 Run tests:

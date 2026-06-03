@@ -12,6 +12,7 @@ rsync -a "$ROOT/" "$BUILD/" \
   --exclude='dist' \
   --exclude='tests' \
   --exclude='docs' \
+  --exclude='.wordpress-org' \
   --exclude='scripts' \
   --exclude='.gitignore'
 if command -v zip >/dev/null 2>&1; then
