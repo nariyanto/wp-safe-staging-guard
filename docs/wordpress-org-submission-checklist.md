@@ -16,13 +16,11 @@ This checklist prepares **Safe Staging Guard** for WordPress.org plugin director
 
 ## Submission recommendation
 
-Do **not** submit immediately until the pending items below are complete.
+The technical submission checklist is complete. Do **not** submit to WordPress.org until Septiyan gives explicit final approval.
 
 Recommended submission path:
 
-1. Capture real WordPress.org screenshots from a clean WordPress/staging install.
-2. Run Plugin Check against the final release ZIP.
-3. Submit to WordPress.org only after explicit approval from Septiyan.
+1. Submit to WordPress.org only after explicit approval from Septiyan.
 
 ## 1. Plugin identity and metadata
 
@@ -74,13 +72,14 @@ Required/strongly recommended assets before submission:
 - [x] `.wordpress-org/assets/banner-772x250.png`
 - [x] `.wordpress-org/assets/icon-256x256.png`
 - [x] `.wordpress-org/assets/icon-128x128.png`
-- [ ] Screenshot 1: Safe Staging Guard settings page.
-- [ ] Screenshot 2: Admin bar environment label.
-- [ ] Screenshot 3: Frontend staging banner.
-- [ ] Screenshot 4, optional: page source/robots meta evidence for `noindex, nofollow` on staging.
-- [ ] Ensure screenshot captions in `readme.txt` match the final screenshot filenames/order.
+- [x] Screenshot 1: Safe Staging Guard settings page after saving staging redirect settings.
+- [x] Screenshot 2: Frontend view showing the admin bar environment label and staging banner.
+- [x] Admin bar environment label evidence is included in Screenshot 2.
+- [x] Frontend staging banner evidence is included in Screenshot 2.
+- [x] Page source/robots meta evidence for `noindex, nofollow` on staging was verified in clean/local and PeepSo staging checks.
+- [x] Ensure screenshot captions in `readme.txt` match the final screenshot filenames/order.
 
-Current asset note: branded banner/icon assets exist under `.wordpress-org/assets/`; real screenshots are still pending.
+Current asset note: branded banner/icon assets and screenshots exist under `.wordpress-org/assets/`.
 
 ## 5. Testing and release package verification
 
@@ -102,14 +101,15 @@ Final submission checks:
 - [x] Current ZIP excludes development-only paths such as `.git`, `.github`, `tests`, `docs`, `scripts`, and `dist`.
 - [x] Add/port metadata validation script from Cron Inspector Lite.
 - [x] Validate ZIP contents programmatically after build.
-- [x] Install final ZIP on PeepSo staging after backup (`/root/peepso-plugin-backups/safe-staging-guard-20260603-092423`). Clean WordPress install remains recommended before final directory upload.
-- [ ] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices on a clean WordPress install.
-- [ ] Verify settings save flow manually in WP Admin after screenshot capture.
+- [x] Install final ZIP on PeepSo staging after backup (`/root/peepso-plugin-backups/safe-staging-guard-20260603-092423`).
+- [x] Install final ZIP on a clean local WordPress test site with `WP_DEBUG` enabled.
+- [x] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices on a clean WordPress install (`no-debug-log`).
+- [x] Verify settings save flow manually in WP Admin after screenshot capture (`Settings saved.` notice and persisted `redirect_email=staging@example.com`).
 - [x] Verify staging mode adds noindex/nofollow on PeepSo staging (`https://peepso.nariyanto.id/` returned HTTP 200 and robots meta included noindex/nofollow).
-- [ ] Verify production mode does not add noindex/nofollow on a clean test install.
+- [x] Verify production mode does not add noindex/nofollow on a clean test install.
 - [x] Verify email block mode is configured on PeepSo staging (`email_mode=block`).
-- [ ] Verify email redirect mode with a safe test recipient.
-- [ ] Verify uninstall/deactivation behavior is acceptable and documented.
+- [x] Verify email redirect mode with a safe test recipient; outgoing mail args were redirected to `staging@example.com` and included the original-recipient audit note.
+- [x] Verify uninstall/deactivation behavior is acceptable and documented: deactivation removes visible/interception behavior and preserves settings for reactivation.
 
 ## 6. GitHub, Packagist, and release alignment
 
@@ -144,15 +144,10 @@ Prepare these values before opening the submission form:
 These steps need explicit approval before execution:
 
 - [ ] Submitting the plugin to WordPress.org.
-- [ ] Creating a new public release tag, e.g. `v0.1.1`.
-- [ ] Uploading assets or release ZIPs to external services beyond GitHub/Packagist already approved.
-- [ ] Any production/staging server changes beyond verification-only checks.
+- [x] Creating a new public release tag, e.g. `v0.1.1`.
+- [x] Uploading assets or release ZIPs to external services beyond GitHub/Packagist already approved.
+- [x] Any production/staging server changes beyond verification-only checks were limited to PeepSo staging plugin update after backup and local clean test environment verification.
 
 ## Suggested next work item
 
-Before WordPress.org submission, the highest-value next patch is:
-
-1. Add `tests/validate-readme.php`.
-2. Add WordPress.org asset placeholders or final assets.
-3. Re-run Plugin Check on the final ZIP.
-4. Cut `v0.1.1` and update Packagist.
+Before WordPress.org submission, the remaining decision is final approval to submit the prepared plugin package and assets to WordPress.org.

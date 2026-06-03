@@ -47,11 +47,14 @@ No. Version 0.1.1 does not send data to external services and does not collect a
 
 No. It is a helper layer for visibility and safety. You should still keep staging and production separate.
 
+= What happens when I deactivate the plugin? =
+
+The visible staging banner, admin bar label, noindex output, and email interception stop when the plugin is deactivated. Settings are preserved so they are available if the plugin is reactivated.
+
 == Screenshots ==
 
-1. Safe Staging Guard settings page.
-2. Admin bar environment label.
-3. Frontend staging banner.
+1. Safe Staging Guard settings page after saving staging redirect settings.
+2. Frontend view showing the admin bar environment label and staging banner.
 
 == Changelog ==
 
