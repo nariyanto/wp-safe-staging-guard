@@ -35,8 +35,8 @@ final class EmailSafety
         }
 
         $args['to'] = [];
-        $args['subject'] = 'Safe Staging Guard blocked a staging email.';
-        $args['message'] = self::prependAuditNote('Email delivery was blocked by Safe Staging Guard.', $originalRecipients, $settings);
+        $args['subject'] = 'Nariyanto Safe Staging Guard blocked a staging email.';
+        $args['message'] = self::prependAuditNote('Email delivery was blocked by Nariyanto Safe Staging Guard.', $originalRecipients, $settings);
         $args['headers'] = [];
         $args['attachments'] = [];
         $args['blocked'] = true;
@@ -54,7 +54,7 @@ final class EmailSafety
 
     private static function prependAuditNote(string $message, string $originalRecipients, EnvironmentSettings $settings): string
     {
-        $note = "Safe Staging Guard environment: " . $settings->environment() . "\n";
+        $note = "Nariyanto Safe Staging Guard environment: " . $settings->environment() . "\n";
         $note .= "Original recipients: " . ($originalRecipients !== '' ? $originalRecipients : '(none)') . "\n\n";
         return $note . $message;
     }

@@ -1,8 +1,8 @@
-# Worklog Notes: Safe Staging Guard v0.1.0
+# Worklog Notes: Nariyanto Safe Staging Guard v0.1.0
 
 ## Summary
 
-Safe Staging Guard is the second WordPress plugin in the Nariyanto GitHub portfolio roadmap. It focuses on staging-site safety: visible environment labels, noindex controls, and safe email handling.
+Nariyanto Safe Staging Guard is the second WordPress plugin in the Nariyanto GitHub portfolio roadmap. It focuses on staging-site safety: visible environment labels, noindex controls, and safe email handling.
 
 ## Milestone
 
@@ -15,7 +15,7 @@ Safe Staging Guard is the second WordPress plugin in the Nariyanto GitHub portfo
 ## Technical decisions
 
 - Keep v0.1.0 non-destructive and review-friendly.
-- Use `safe-staging-guard` as the WordPress.org-facing slug to avoid restricted `WP` wording.
+- Use `nariyanto-safe-staging-guard` as the WordPress.org-facing slug to avoid restricted `WP` wording.
 - Make Production mode automatically disable noindex and email interception.
 - Keep email blocking local to WordPress mail flow and avoid external calls.
 - Use pure service classes for testable logic before WordPress admin glue.

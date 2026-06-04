@@ -2,8 +2,8 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIST="$ROOT/dist"
-BUILD="$DIST/safe-staging-guard"
-ZIP="$DIST/safe-staging-guard.zip"
+BUILD="$DIST/nariyanto-safe-staging-guard"
+ZIP="$DIST/nariyanto-safe-staging-guard.zip"
 rm -rf "$DIST"
 mkdir -p "$BUILD"
 rsync -a "$ROOT/" "$BUILD/" \
@@ -13,10 +13,12 @@ rsync -a "$ROOT/" "$BUILD/" \
   --exclude='tests' \
   --exclude='docs' \
   --exclude='.wordpress-org' \
+  --exclude='README.md' \
+  --exclude='composer.json' \
   --exclude='scripts' \
   --exclude='.gitignore'
 if command -v zip >/dev/null 2>&1; then
-  (cd "$DIST" && zip -qr "$ZIP" safe-staging-guard)
+  (cd "$DIST" && zip -qr "$ZIP" nariyanto-safe-staging-guard)
 else
   python3 - <<'PY' "$DIST" "$ZIP"
 import os
@@ -26,7 +28,7 @@ from pathlib import Path
 
 dist = Path(sys.argv[1])
 zip_path = Path(sys.argv[2])
-root = dist / 'safe-staging-guard'
+root = dist / 'nariyanto-safe-staging-guard'
 with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as archive:
     for path in sorted(root.rglob('*')):
         if path.is_file():

@@ -1,10 +1,10 @@
-=== Safe Staging Guard ===
+=== Nariyanto Safe Staging Guard ===
 Contributors: nariyanto
 Tags: staging, noindex, email, development, safety
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 0.1.1
+Stable tag: 0.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,9 +12,9 @@ Prevent staging-site accidents with visible environment labels, noindex controls
 
 == Description ==
 
-Safe Staging Guard helps WordPress site owners and developers avoid common staging-site mistakes.
+Nariyanto Safe Staging Guard helps WordPress site owners and developers avoid common staging-site mistakes.
 
-Version 0.1.1 focuses on simple, review-friendly safety controls:
+Version 0.1.2 focuses on simple, review-friendly safety controls and WordPress.org prereview remediation:
 
 * Admin bar environment label for administrators.
 * Optional frontend staging banner for logged-in users.
@@ -29,19 +29,19 @@ Privacy note: in redirect mode, redirected test emails include an audit note wit
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/`.
-2. Activate Safe Staging Guard from the Plugins screen.
-3. Open Settings > Safe Staging Guard.
+2. Activate Nariyanto Safe Staging Guard from the Plugins screen.
+3. Open Settings > Nariyanto Safe Staging Guard.
 4. Select the environment and safety options.
 
 == Frequently Asked Questions ==
 
 = Does this plugin change production email delivery? =
 
-If Environment is set to Production, Safe Staging Guard does not block or redirect outgoing email.
+If Environment is set to Production, Nariyanto Safe Staging Guard does not block or redirect outgoing email.
 
 = Does this plugin send data externally? =
 
-No. Version 0.1.1 does not send data to external services and does not collect analytics.
+No. Version 0.1.2 does not send data to external services and does not collect analytics.
 
 = Is this a replacement for a proper staging environment? =
 
@@ -53,10 +53,14 @@ The visible staging banner, admin bar label, noindex output, and email intercept
 
 == Screenshots ==
 
-1. Safe Staging Guard settings page after saving staging redirect settings.
+1. Nariyanto Safe Staging Guard settings page after saving staging redirect settings.
 2. Frontend view showing the admin bar environment label and staging banner.
 
 == Changelog ==
+
+= 0.1.2 =
+* Renamed to Nariyanto Safe Staging Guard with text domain `nariyanto-safe-staging-guard` for WordPress.org review.
+* Moved frontend banner styling to an enqueued stylesheet.
 
 = 0.1.1 =
 * Added WordPress.org submission checklist, metadata validation, release ZIP validation, release workflow, and repository/Packagist polish.

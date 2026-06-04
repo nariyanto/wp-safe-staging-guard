@@ -70,7 +70,7 @@ $blocked = EmailSafety::apply([
     'attachments' => [],
 ], EnvironmentSettings::fromArray(['email_mode' => 'block']));
 assert_true($blocked['blocked'], 'block mode should mark email as blocked');
-assert_same('Safe Staging Guard blocked a staging email.', $blocked['subject'], 'blocked email should use safe subject');
+assert_same('Nariyanto Safe Staging Guard blocked a staging email.', $blocked['subject'], 'blocked email should use safe subject');
 assert_same([], $blocked['to'], 'blocked email should have no recipients');
 
 $redirected = EmailSafety::apply([

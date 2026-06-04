@@ -1,0 +1,12 @@
+.nariyanto-safe-staging-guard-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background: #7c2d12;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  font: 600 13px system-ui, sans-serif;
+}

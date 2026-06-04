@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.2 - 2026-06-04
+
+WordPress.org prereview remediation release.
+
+### Changed
+
+- Renamed public plugin identity to Nariyanto Safe Staging Guard.
+- Updated plugin slug, text domain, main file, release ZIP slug, language template, tests, and documentation to nariyanto-safe-staging-guard.
+- Moved frontend banner styling from inline HTML to an enqueued stylesheet.
+
 ## 0.1.1 - 2026-06-03
 
 Submission-prep and repository polish release.
@@ -29,6 +39,6 @@ Initial portfolio/staging release.
 - Noindex/nofollow robots control for local and staging environments.
 - Email safety modes: block, redirect, and allow.
 - Production mode guard that disables noindex and email interception.
-- Settings page under Settings > Safe Staging Guard.
+- Settings page under Settings > Nariyanto Safe Staging Guard.
 - Pure PHP tests for settings, email safety, and noindex behavior.
 - GitHub Actions CI and clean release ZIP builder.

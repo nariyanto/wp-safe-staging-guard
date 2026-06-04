@@ -1,18 +1,18 @@
-# Safe Staging Guard WordPress.org Submission Checklist
+# Nariyanto Safe Staging Guard WordPress.org Submission Checklist
 
-This checklist prepares **Safe Staging Guard** for WordPress.org plugin directory submission. It is intentionally separate from the GitHub release checklist because WordPress.org review has extra requirements around plugin identity, assets, security, privacy, and final ZIP/SVN submission.
+This checklist prepares **Nariyanto Safe Staging Guard** for WordPress.org plugin directory submission. It is intentionally separate from the GitHub release checklist because WordPress.org review has extra requirements around plugin identity, assets, security, privacy, and final ZIP/SVN submission.
 
 ## Current status snapshot
 
 - Repository: <https://github.com/nariyanto/wp-safe-staging-guard>
-- Public plugin name: `Safe Staging Guard`
-- Plugin slug/text domain: `safe-staging-guard`
-- Main file: `safe-staging-guard.php`
-- Current version/stable tag: `0.1.1`
+- Public plugin name: `Nariyanto Safe Staging Guard`
+- Plugin slug/text domain: `nariyanto-safe-staging-guard`
+- Main file: `nariyanto-safe-staging-guard.php`
+- Current version/stable tag: `0.1.2`
 - License: `GPL-2.0-or-later`
 - Requires WordPress: `6.0+`
 - Requires PHP: `7.4+`
-- Current package status: GitHub release `v0.1.1` exists; Packagist exposes stable `v0.1.1`.
+- Current package status: `0.1.2` candidate ZIP builds locally as `dist/nariyanto-safe-staging-guard.zip`; GitHub release/tag and Packagist update are pending final approval.
 
 ## Submission recommendation
 
@@ -24,19 +24,19 @@ Recommended submission path:
 
 ## 1. Plugin identity and metadata
 
-- [x] Main plugin header uses public name `Safe Staging Guard`.
-- [x] `Plugin URI` points to the GitHub repository.
+- [x] Main plugin header uses public name `Nariyanto Safe Staging Guard`.
+- [x] `Plugin URI` points to `https://nariyanto.id`; GitHub remains documented outside the WordPress.org ZIP.
 - [x] Description matches the current feature scope.
-- [x] Version is present in `safe-staging-guard.php`.
+- [x] Version is present in `nariyanto-safe-staging-guard.php`.
 - [x] `Requires at least` is present.
 - [x] `Requires PHP` is present.
 - [x] Author and Author URI are present.
 - [x] License and License URI are present.
-- [x] Text domain is `safe-staging-guard`.
+- [x] Text domain is `nariyanto-safe-staging-guard`.
 - [x] Domain path is `/languages`.
 - [x] `readme.txt` public plugin name matches the main header.
 - [x] `readme.txt` contributors field is `nariyanto`.
-- [x] `readme.txt` stable tag matches plugin version: `0.1.1`.
+- [x] `readme.txt` stable tag matches plugin version: `0.1.2`.
 - [x] Tags are relevant and not spammy: `staging`, `noindex`, `email`, `development`, `safety`.
 - [x] Add `tests/validate-readme.php` to automatically check the main header and `readme.txt` metadata before submission.
 
@@ -53,7 +53,7 @@ Recommended submission path:
 - [x] Re-check sanitization of every saved option.
 - [x] Re-check escaping for all admin/frontend output.
 - [x] Search for debug leftovers, hardcoded staging URLs, TODOs, and private environment references.
-- [x] Run WordPress Plugin Check on the final submission ZIP/staging install and save the result in this checklist. Result: `Success: Checks complete. No errors found.` on PeepSo staging for `safe-staging-guard` 0.1.1.
+- [x] Run WordPress Plugin Check on the final submission ZIP/staging install and save the result in this checklist. Result: `Success: Checks complete. No errors found.` on a disposable local WordPress 6.8.3 install with Plugin Check 2.0.0 for `nariyanto-safe-staging-guard` 0.1.2.
 
 ## 3. Privacy, disclosure, and policy fit
 
@@ -72,7 +72,7 @@ Required/strongly recommended assets before submission:
 - [x] `.wordpress-org/assets/banner-772x250.png`
 - [x] `.wordpress-org/assets/icon-256x256.png`
 - [x] `.wordpress-org/assets/icon-128x128.png`
-- [x] Screenshot 1: Safe Staging Guard settings page after saving staging redirect settings.
+- [x] Screenshot 1: Nariyanto Safe Staging Guard settings page after saving staging redirect settings.
 - [x] Screenshot 2: Frontend view showing the admin bar environment label and staging banner.
 - [x] Admin bar environment label evidence is included in Screenshot 2.
 - [x] Frontend staging banner evidence is included in Screenshot 2.
@@ -101,7 +101,7 @@ Final submission checks:
 - [x] Current ZIP excludes development-only paths such as `.git`, `.github`, `tests`, `docs`, `scripts`, and `dist`.
 - [x] Add/port metadata validation script from Cron Inspector Lite.
 - [x] Validate ZIP contents programmatically after build.
-- [x] Install final ZIP on PeepSo staging after backup (`/root/peepso-plugin-backups/safe-staging-guard-20260603-092423`).
+- [ ] Optional: install the renamed final ZIP on PeepSo staging after backup if we want fresh staging evidence for the new public identity.
 - [x] Install final ZIP on a clean local WordPress test site with `WP_DEBUG` enabled.
 - [x] Activate plugin with `WP_DEBUG` enabled and confirm no PHP warnings/notices on a clean WordPress install (`no-debug-log`).
 - [x] Verify settings save flow manually in WP Admin after screenshot capture (`Settings saved.` notice and persisted `redirect_email=staging@example.com`).
@@ -115,20 +115,20 @@ Final submission checks:
 
 - [x] GitHub repo exists.
 - [x] GitHub CI passes on `main`.
-- [x] GitHub release `v0.1.0` exists.
+- [x] GitHub release `v0.1.0` and `v0.1.1` exist.
 - [x] Composer metadata exists.
 - [x] Packagist package exists.
-- [x] Create `v0.1.1` after final submission-prep docs/scripts/assets are complete, because `v0.1.0` was tagged before `composer.json` existed.
-- [x] After `v0.1.1`, update Packagist and confirm the package exposes a stable version.
-- [x] If stable Packagist version exists, switch README badge from downloads to version.
-- [x] Confirm GitHub release ZIP and WordPress.org submission ZIP are aligned.
+- [ ] Create `v0.1.2` after final remediation is approved.
+- [ ] After `v0.1.2`, update Packagist and confirm the package exposes a stable version.
+- [x] README badge already points to the existing Packagist package.
+- [x] Confirm local WordPress.org submission ZIP content is aligned with the remediated source.
 
 ## 7. WordPress.org submission form prep
 
 Prepare these values before opening the submission form:
 
-- Plugin name: `Safe Staging Guard`
-- Plugin slug preference: `safe-staging-guard`
+- Plugin name: `Nariyanto Safe Staging Guard`
+- Plugin slug preference: `nariyanto-safe-staging-guard`
 - Plugin URL: <https://github.com/nariyanto/wp-safe-staging-guard>
 - Short description: `Prevent staging-site accidents with visible environment labels, noindex controls, and safe email handling.`
 - Long description: use `readme.txt` Description section.
@@ -144,9 +144,9 @@ Prepare these values before opening the submission form:
 These steps need explicit approval before execution:
 
 - [ ] Submitting the plugin to WordPress.org.
-- [x] Creating a new public release tag, e.g. `v0.1.1`.
-- [x] Uploading assets or release ZIPs to external services beyond GitHub/Packagist already approved.
-- [x] Any production/staging server changes beyond verification-only checks were limited to PeepSo staging plugin update after backup and local clean test environment verification.
+- [ ] Creating a new public release tag, e.g. `v0.1.2`.
+- [ ] Uploading assets or release ZIPs to external services beyond GitHub.
+- [ ] Any production/staging server changes beyond local verification-only checks.
 
 ## Suggested next work item
 
