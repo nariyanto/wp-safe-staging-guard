@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Nariyanto\SafeStagingGuard;
+namespace SNXWorks\SafeStagingGuard;
 
 final class NoindexPolicy
 {

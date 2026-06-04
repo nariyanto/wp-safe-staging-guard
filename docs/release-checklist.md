@@ -1,4 +1,4 @@
-# Nariyanto Safe Staging Guard Release Checklist
+# SNXWorks Safe Staging Guard Release Checklist
 
 ## v0.1.0
 

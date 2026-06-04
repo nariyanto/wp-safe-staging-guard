@@ -1,18 +1,18 @@
-# Nariyanto Safe Staging Guard WordPress.org Submission Checklist
+# SNXWorks Safe Staging Guard WordPress.org Submission Checklist
 
-This checklist prepares **Nariyanto Safe Staging Guard** for WordPress.org plugin directory submission. It is intentionally separate from the GitHub release checklist because WordPress.org review has extra requirements around plugin identity, assets, security, privacy, and final ZIP/SVN submission.
+This checklist prepares **SNXWorks Safe Staging Guard** for WordPress.org plugin directory submission. It is intentionally separate from the GitHub release checklist because WordPress.org review has extra requirements around plugin identity, assets, security, privacy, and final ZIP/SVN submission.
 
 ## Current status snapshot
 
 - Repository: <https://github.com/nariyanto/wp-safe-staging-guard>
-- Public plugin name: `Nariyanto Safe Staging Guard`
-- Plugin slug/text domain: `nariyanto-safe-staging-guard`
-- Main file: `nariyanto-safe-staging-guard.php`
+- Public plugin name: `SNXWorks Safe Staging Guard`
+- Plugin slug/text domain: `snxworks-safe-staging-guard`
+- Main file: `snxworks-safe-staging-guard.php`
 - Current version/stable tag: `0.1.2`
 - License: `GPL-2.0-or-later`
 - Requires WordPress: `6.0+`
 - Requires PHP: `7.4+`
-- Current package status: `0.1.2` candidate ZIP builds locally as `dist/nariyanto-safe-staging-guard.zip`; GitHub release/tag and Packagist update are pending final approval.
+- Current package status: `0.1.2` candidate ZIP builds locally as `dist/snxworks-safe-staging-guard.zip`; GitHub release/tag and Packagist update are pending final approval.
 
 ## Submission recommendation
 
@@ -24,15 +24,15 @@ Recommended submission path:
 
 ## 1. Plugin identity and metadata
 
-- [x] Main plugin header uses public name `Nariyanto Safe Staging Guard`.
+- [x] Main plugin header uses public name `SNXWorks Safe Staging Guard`.
 - [x] `Plugin URI` points to `https://nariyanto.id`; GitHub remains documented outside the WordPress.org ZIP.
 - [x] Description matches the current feature scope.
-- [x] Version is present in `nariyanto-safe-staging-guard.php`.
+- [x] Version is present in `snxworks-safe-staging-guard.php`.
 - [x] `Requires at least` is present.
 - [x] `Requires PHP` is present.
 - [x] Author and Author URI are present.
 - [x] License and License URI are present.
-- [x] Text domain is `nariyanto-safe-staging-guard`.
+- [x] Text domain is `snxworks-safe-staging-guard`.
 - [x] Domain path is `/languages`.
 - [x] `readme.txt` public plugin name matches the main header.
 - [x] `readme.txt` contributors field is `nariyanto`.
@@ -43,7 +43,7 @@ Recommended submission path:
 ## 2. Security and code review
 
 - [x] Direct file access is guarded with `defined('ABSPATH')` checks.
-- [x] Plugin uses a namespaced PHP codebase under `Nariyanto\SafeStagingGuard`.
+- [x] Plugin uses a namespaced PHP codebase under `SNXWorks\SafeStagingGuard`.
 - [x] Plugin scope is non-destructive.
 - [x] Production mode does not intercept email or force noindex behavior.
 - [x] No telemetry or external network calls are documented.
@@ -53,7 +53,7 @@ Recommended submission path:
 - [x] Re-check sanitization of every saved option.
 - [x] Re-check escaping for all admin/frontend output.
 - [x] Search for debug leftovers, hardcoded staging URLs, TODOs, and private environment references.
-- [x] Run WordPress Plugin Check on the final submission ZIP/staging install and save the result in this checklist. Result: `Success: Checks complete. No errors found.` on a disposable local WordPress 6.8.3 install with Plugin Check 2.0.0 for `nariyanto-safe-staging-guard` 0.1.2.
+- [x] Run WordPress Plugin Check on the final submission ZIP/staging install and save the result in this checklist. Result: `Success: Checks complete. No errors found.` on a disposable local WordPress 6.8.3 install with Plugin Check 2.0.0 for `snxworks-safe-staging-guard` 0.1.2.
 
 ## 3. Privacy, disclosure, and policy fit
 
@@ -72,7 +72,7 @@ Required/strongly recommended assets before submission:
 - [x] `.wordpress-org/assets/banner-772x250.png`
 - [x] `.wordpress-org/assets/icon-256x256.png`
 - [x] `.wordpress-org/assets/icon-128x128.png`
-- [x] Screenshot 1: Nariyanto Safe Staging Guard settings page after saving staging redirect settings.
+- [x] Screenshot 1: SNXWorks Safe Staging Guard settings page after saving staging redirect settings.
 - [x] Screenshot 2: Frontend view showing the admin bar environment label and staging banner.
 - [x] Admin bar environment label evidence is included in Screenshot 2.
 - [x] Frontend staging banner evidence is included in Screenshot 2.
@@ -127,8 +127,8 @@ Final submission checks:
 
 Prepare these values before opening the submission form:
 
-- Plugin name: `Nariyanto Safe Staging Guard`
-- Plugin slug preference: `nariyanto-safe-staging-guard`
+- Plugin name: `SNXWorks Safe Staging Guard`
+- Plugin slug preference: `snxworks-safe-staging-guard`
 - Plugin URL: <https://github.com/nariyanto/wp-safe-staging-guard>
 - Short description: `Prevent staging-site accidents with visible environment labels, noindex controls, and safe email handling.`
 - Long description: use `readme.txt` Description section.

@@ -1,5 +1,5 @@
 {
-  "name": "nariyanto/wp-safe-staging-guard",
+  "name": "snxworks/safe-staging-guard",
   "description": "Prevent WordPress staging-site accidents with visible environment labels, noindex controls, and safe email handling.",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Nariyanto\\SafeStagingGuard\\": "src/"
+      "SNXWorks\\SafeStagingGuard\\": "src/"
     }
   }
 }

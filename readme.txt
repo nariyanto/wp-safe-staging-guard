@@ -1,4 +1,4 @@
-=== Nariyanto Safe Staging Guard ===
+=== SNXWorks Safe Staging Guard ===
 Contributors: nariyanto
 Tags: staging, noindex, email, development, safety
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Prevent staging-site accidents with visible environment labels, noindex controls
 
 == Description ==
 
-Nariyanto Safe Staging Guard helps WordPress site owners and developers avoid common staging-site mistakes.
+SNXWorks Safe Staging Guard helps WordPress site owners and developers avoid common staging-site mistakes.
 
 Version 0.1.2 focuses on simple, review-friendly safety controls and WordPress.org prereview remediation:
 
@@ -29,15 +29,15 @@ Privacy note: in redirect mode, redirected test emails include an audit note wit
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/`.
-2. Activate Nariyanto Safe Staging Guard from the Plugins screen.
-3. Open Settings > Nariyanto Safe Staging Guard.
+2. Activate SNXWorks Safe Staging Guard from the Plugins screen.
+3. Open Settings > SNXWorks Safe Staging Guard.
 4. Select the environment and safety options.
 
 == Frequently Asked Questions ==
 
 = Does this plugin change production email delivery? =
 
-If Environment is set to Production, Nariyanto Safe Staging Guard does not block or redirect outgoing email.
+If Environment is set to Production, SNXWorks Safe Staging Guard does not block or redirect outgoing email.
 
 = Does this plugin send data externally? =
 
@@ -53,13 +53,13 @@ The visible staging banner, admin bar label, noindex output, and email intercept
 
 == Screenshots ==
 
-1. Nariyanto Safe Staging Guard settings page after saving staging redirect settings.
+1. SNXWorks Safe Staging Guard settings page after saving staging redirect settings.
 2. Frontend view showing the admin bar environment label and staging banner.
 
 == Changelog ==
 
 = 0.1.2 =
-* Renamed to Nariyanto Safe Staging Guard with text domain `nariyanto-safe-staging-guard` for WordPress.org review.
+* Renamed to SNXWorks Safe Staging Guard with text domain `snxworks-safe-staging-guard` for WordPress.org review.
 * Moved frontend banner styling to an enqueued stylesheet.
 
 = 0.1.1 =

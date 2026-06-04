@@ -1,42 +1,42 @@
 #!/usr/bin/env python3
-"""Validate Nariyanto Safe Staging Guard release ZIP contents."""
+"""Validate SNXWorks Safe Staging Guard release ZIP contents."""
 from __future__ import annotations
 
 import sys
 import zipfile
 from pathlib import Path
 
-zip_path = Path(sys.argv[1] if len(sys.argv) > 1 else 'dist/nariyanto-safe-staging-guard.zip')
+zip_path = Path(sys.argv[1] if len(sys.argv) > 1 else 'dist/snxworks-safe-staging-guard.zip')
 if not zip_path.exists():
     raise SystemExit(f'ZIP not found: {zip_path}')
 
 required = {
-    'nariyanto-safe-staging-guard/nariyanto-safe-staging-guard.php',
-    'nariyanto-safe-staging-guard/readme.txt',
-    'nariyanto-safe-staging-guard/CHANGELOG.md',
-    'nariyanto-safe-staging-guard/assets/frontend.css',
-    'nariyanto-safe-staging-guard/languages/nariyanto-safe-staging-guard.pot',
-    'nariyanto-safe-staging-guard/src/Plugin.php',
-    'nariyanto-safe-staging-guard/src/EnvironmentSettings.php',
-    'nariyanto-safe-staging-guard/src/EmailSafety.php',
-    'nariyanto-safe-staging-guard/src/NoindexPolicy.php',
+    'snxworks-safe-staging-guard/snxworks-safe-staging-guard.php',
+    'snxworks-safe-staging-guard/readme.txt',
+    'snxworks-safe-staging-guard/CHANGELOG.md',
+    'snxworks-safe-staging-guard/assets/frontend.css',
+    'snxworks-safe-staging-guard/languages/snxworks-safe-staging-guard.pot',
+    'snxworks-safe-staging-guard/src/Plugin.php',
+    'snxworks-safe-staging-guard/src/EnvironmentSettings.php',
+    'snxworks-safe-staging-guard/src/EmailSafety.php',
+    'snxworks-safe-staging-guard/src/NoindexPolicy.php',
 }
 
 forbidden_prefixes = (
-    'nariyanto-safe-staging-guard/.git/',
-    'nariyanto-safe-staging-guard/.github/',
-    'nariyanto-safe-staging-guard/tests/',
-    'nariyanto-safe-staging-guard/docs/',
-    'nariyanto-safe-staging-guard/scripts/',
-    'nariyanto-safe-staging-guard/dist/',
-    'nariyanto-safe-staging-guard/.wordpress-org/',
-    'nariyanto-safe-staging-guard/vendor/',
+    'snxworks-safe-staging-guard/.git/',
+    'snxworks-safe-staging-guard/.github/',
+    'snxworks-safe-staging-guard/tests/',
+    'snxworks-safe-staging-guard/docs/',
+    'snxworks-safe-staging-guard/scripts/',
+    'snxworks-safe-staging-guard/dist/',
+    'snxworks-safe-staging-guard/.wordpress-org/',
+    'snxworks-safe-staging-guard/vendor/',
 )
 
 forbidden_files = {
-    'nariyanto-safe-staging-guard/.gitignore',
-    'nariyanto-safe-staging-guard/README.md',
-    'nariyanto-safe-staging-guard/composer.json',
+    'snxworks-safe-staging-guard/.gitignore',
+    'snxworks-safe-staging-guard/README.md',
+    'snxworks-safe-staging-guard/composer.json',
 }
 
 with zipfile.ZipFile(zip_path) as archive:

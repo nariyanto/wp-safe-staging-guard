@@ -6,9 +6,9 @@ require_once __DIR__ . '/../src/EnvironmentSettings.php';
 require_once __DIR__ . '/../src/EmailSafety.php';
 require_once __DIR__ . '/../src/NoindexPolicy.php';
 
-use Nariyanto\SafeStagingGuard\EmailSafety;
-use Nariyanto\SafeStagingGuard\EnvironmentSettings;
-use Nariyanto\SafeStagingGuard\NoindexPolicy;
+use SNXWorks\SafeStagingGuard\EmailSafety;
+use SNXWorks\SafeStagingGuard\EnvironmentSettings;
+use SNXWorks\SafeStagingGuard\NoindexPolicy;
 
 $failures = 0;
 
@@ -70,7 +70,7 @@ $blocked = EmailSafety::apply([
     'attachments' => [],
 ], EnvironmentSettings::fromArray(['email_mode' => 'block']));
 assert_true($blocked['blocked'], 'block mode should mark email as blocked');
-assert_same('Nariyanto Safe Staging Guard blocked a staging email.', $blocked['subject'], 'blocked email should use safe subject');
+assert_same('SNXWorks Safe Staging Guard blocked a staging email.', $blocked['subject'], 'blocked email should use safe subject');
 assert_same([], $blocked['to'], 'blocked email should have no recipients');
 
 $redirected = EmailSafety::apply([

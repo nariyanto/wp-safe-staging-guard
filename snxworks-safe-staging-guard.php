@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Nariyanto Safe Staging Guard
+ * Plugin Name: SNXWorks Safe Staging Guard
  * Description: Prevent staging-site accidents with visible environment labels, noindex controls, and safe email handling.
  * Version: 0.1.2
  * Requires at least: 6.0
@@ -9,7 +9,7 @@
  * Author URI: https://nariyanto.id
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: nariyanto-safe-staging-guard
+ * Text Domain: snxworks-safe-staging-guard
  * Domain Path: /languages
  */
 
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('NARIYANTO_SAFE_STAGING_GUARD_FILE', __FILE__);
+define('SNXWORKS_SAFE_STAGING_GUARD_FILE', __FILE__);
 
 require_once __DIR__ . '/src/EnvironmentSettings.php';
 require_once __DIR__ . '/src/EmailSafety.php';
@@ -27,6 +27,6 @@ require_once __DIR__ . '/src/NoindexPolicy.php';
 require_once __DIR__ . '/src/Plugin.php';
 
 add_action('plugins_loaded', static function (): void {
-    $plugin = new \Nariyanto\SafeStagingGuard\Plugin();
+    $plugin = new \SNXWorks\SafeStagingGuard\Plugin();
     $plugin->register();
 });

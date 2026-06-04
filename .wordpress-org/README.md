@@ -13,4 +13,4 @@ Still needed before WordPress.org submission:
 
 - Final Plugin Check run against the submission ZIP.
 
-For v0.1.2 GitHub release, screenshots are documented in README/readme and were captured from a clean local WordPress install with Nariyanto Safe Staging Guard active.
+For v0.1.2 GitHub release, screenshots are documented in README/readme and were captured from a clean local WordPress install with SNXWorks Safe Staging Guard active.

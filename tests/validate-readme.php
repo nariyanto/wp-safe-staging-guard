@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 $root = dirname(__DIR__);
 $readme = file_get_contents($root . '/readme.txt');
-$plugin = file_get_contents($root . '/nariyanto-safe-staging-guard.php');
+$plugin = file_get_contents($root . '/snxworks-safe-staging-guard.php');
 $pluginClass = file_get_contents($root . '/src/Plugin.php');
 $changelog = file_get_contents($root . '/CHANGELOG.md');
 
@@ -16,7 +16,7 @@ if (false === $readme || false === $plugin || false === $pluginClass || false ==
 $failures = [];
 
 $requiredReadmePatterns = [
-    '/^=== Nariyanto Safe Staging Guard ===$/m' => 'readme plugin title',
+    '/^=== SNXWorks Safe Staging Guard ===$/m' => 'readme plugin title',
     '/^Contributors:\s*nariyanto$/m' => 'readme contributors',
     '/^Tags:\s*staging, noindex, email, development, safety$/m' => 'readme tags',
     '/^Requires at least:\s*6\.0$/m' => 'minimum WordPress version',
@@ -40,7 +40,7 @@ foreach ($requiredReadmePatterns as $pattern => $label) {
 }
 
 $requiredPluginPatterns = [
-    '/Plugin Name:\s*Nariyanto Safe Staging Guard/' => 'plugin name',
+    '/Plugin Name:\s*SNXWorks Safe Staging Guard/' => 'plugin name',
     '/Version:\s*0\.1\.2/' => 'plugin version',
     '/Requires at least:\s*6\.0/' => 'plugin minimum WordPress version',
     '/Requires PHP:\s*7\.4/' => 'plugin minimum PHP version',
@@ -48,7 +48,7 @@ $requiredPluginPatterns = [
     '/Author URI:\s*https:\/\/nariyanto\.id/' => 'plugin author URI',
     '/License:\s*GPL-2\.0-or-later/' => 'plugin license',
     '/License URI:\s*https:\/\/www\.gnu\.org\/licenses\/gpl-2\.0\.html/' => 'plugin license URI',
-    '/Text Domain:\s*nariyanto-safe-staging-guard/' => 'text domain',
+    '/Text Domain:\s*snxworks-safe-staging-guard/' => 'text domain',
     '/Domain Path:\s*\/languages/' => 'domain path',
 ];
 

@@ -1,4 +1,4 @@
-# Nariyanto Safe Staging Guard
+# SNXWorks Safe Staging Guard
 
 [![CI](https://github.com/nariyanto/wp-safe-staging-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/nariyanto/wp-safe-staging-guard/actions/workflows/ci.yml)
 [![Latest Release](https://img.shields.io/github/v/release/nariyanto/wp-safe-staging-guard?label=release)](https://github.com/nariyanto/wp-safe-staging-guard/releases)
@@ -18,7 +18,7 @@ Staging sites are useful, but they can accidentally:
 - look too similar to production,
 - confuse support and testing workflows.
 
-Nariyanto Safe Staging Guard adds a small safety layer for WordPress staging/local environments.
+SNXWorks Safe Staging Guard adds a small safety layer for WordPress staging/local environments.
 
 ## v0.1.0 features
 
