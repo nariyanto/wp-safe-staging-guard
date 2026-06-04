@@ -41,7 +41,6 @@ foreach ($requiredReadmePatterns as $pattern => $label) {
 
 $requiredPluginPatterns = [
     '/Plugin Name:\s*Nariyanto Safe Staging Guard/' => 'plugin name',
-    '/Plugin URI:\s*https:\/\/nariyanto\.id/' => 'plugin URI',
     '/Version:\s*0\.1\.2/' => 'plugin version',
     '/Requires at least:\s*6\.0/' => 'plugin minimum WordPress version',
     '/Requires PHP:\s*7\.4/' => 'plugin minimum PHP version',
@@ -57,6 +56,14 @@ foreach ($requiredPluginPatterns as $pattern => $label) {
     if (1 !== preg_match($pattern, $plugin)) {
         $failures[] = "Missing or invalid {$label}.";
     }
+}
+
+if (
+    1 === preg_match('/Plugin URI:\s*(\S+)/', $plugin, $pluginUriMatches)
+    && 1 === preg_match('/Author URI:\s*(\S+)/', $plugin, $authorUriMatches)
+    && $pluginUriMatches[1] === $authorUriMatches[1]
+) {
+    $failures[] = 'Plugin URI and Author URI must not be the same for WordPress.org submission.';
 }
 
 if (false === strpos((string)$pluginClass, "public const VERSION = '0.1.2';")) {

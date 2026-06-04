@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name: Nariyanto Safe Staging Guard
- * Plugin URI: https://nariyanto.id
  * Description: Prevent staging-site accidents with visible environment labels, noindex controls, and safe email handling.
  * Version: 0.1.2
  * Requires at least: 6.0
